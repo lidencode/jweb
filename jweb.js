@@ -1,6 +1,6 @@
 let jWeb = {
-    test: function() {
-        alert('hola jweb!')
+    extend: function(name, object) {
+        this[name] = object;
     },
 
     fn: {
