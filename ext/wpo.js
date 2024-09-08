@@ -7,6 +7,7 @@ jWeb.extend('wpo', {
             for (var i = 0; i < folders.length; i++) {
                 var folder = folders[i];
 
+                // TODO: add css class for fa-icon and replace image for before in the original el, same as fa do it.
                 document.querySelectorAll('.fa-' + folder).forEach((el, i) => {
                     var otherClass = Array.from(el.classList)
                         .filter(item => item !== 'fa-' + folder);
@@ -16,12 +17,8 @@ jWeb.extend('wpo', {
 
                     var icon = faClass.replace('fa-', '') + '.svg';
                     var iconPath = path + '/' + folder + '/' + icon;
-                    console.log('folder: ' + folder);
-                    console.log('iconPath: ' + iconPath);
 
                     otherClass.push('fa-icon')
-                    console.log('<img src="' + iconPath + '" class="' + otherClass.join(' ') + '" />');
-
                     el.outerHTML = '<img src="' + iconPath + '" class="' + otherClass.join(' ') + '" />';
                 });
             }
