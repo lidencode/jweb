@@ -20,8 +20,9 @@ jWeb.extend('wpo', {
                     var iconPath = path + '/' + folder + '/' + icon;
 
                     var customClass = 'wpo-' + faClass;
-                    styles.push('.' + customClass + '::after { content: ""; background: url:("' + iconPath + '") no-repeat; } ')
+                    styles.push('.' + customClass + '::before { mask: url("' + iconPath + '") center no-repeat; } ')
                     el.classList.add(customClass);
+                    el.classList.add('wpo-fa-icon');
                     el.classList.remove(faClass);
                 });
             }
