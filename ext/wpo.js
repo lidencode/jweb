@@ -4,12 +4,21 @@ jWeb.extend('wpo', {
             var folders = ['brands', 'duotone', 'light', 'regular', 'sharp-light', 'sharp-regular',
                 'sharp-solid', 'sharp-thin', 'solid', 'thin'];
 
-            var styles = [];
+            var styles = [
+                '.wpo-fa-icon::before {' +
+                ' content: "";' +
+                ' display: inline-block;' +
+                ' width: 1em;' +
+                ' height: 1em;' +
+                ' background-color: currentColor;' +
+                ' mask-size: contain;' +
+                ' vertical-align: middle;' +
+                ' margin-top: -0.3em; }'
+            ];
 
             for (var i = 0; i < folders.length; i++) {
                 var folder = folders[i];
 
-                // TODO: add css class for fa-icon and replace image for before in the original el, same as fa do it.
                 document.querySelectorAll('.fa-' + folder).forEach((el, i) => {
                     var otherClass = Array.from(el.classList)
                         .filter(item => item !== 'fa-' + folder);
