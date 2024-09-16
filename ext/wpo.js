@@ -33,6 +33,7 @@ jWeb.extend('wpo', {
                     el.classList.add(customClass);
                     el.classList.add('wpo-fa-icon');
                     el.classList.remove(faClass);
+                    el.classList.remove('fa-' + folder);
                 });
             }
 
