@@ -13,7 +13,7 @@ jWeb.extend('wpo', {
                 ' background-color: currentColor;' +
                 ' mask-size: contain;' +
                 ' vertical-align: middle;' +
-                ' margin-top: -0.3em; }'
+                ' margin-top: -0.2em; }'
             ];
 
             for (var i = 0; i < folders.length; i++) {

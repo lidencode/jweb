@@ -1,0 +1,3 @@
+jWeb.extend('dom', {
+
+});
