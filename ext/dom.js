@@ -5,5 +5,15 @@ jWeb.extend('dom', {
 
     find: function(query) {
         return document.querySelectorAll(query);
+    },
+
+    css: {
+        show: function(el) {
+            el.style.display = '';
+        },
+
+        hide: function(el) {
+            el.style.display = 'none';
+        }
     }
 });
