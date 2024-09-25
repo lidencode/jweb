@@ -8,12 +8,22 @@ jWeb.extend('dom', {
     },
 
     css: {
-        show: function(el) {
-            el.style.display = '';
-        },
+        display: {
+            show: function(el) {
+                el.style.display = '';
+            },
 
-        hide: function(el) {
-            el.style.display = 'none';
+            hide: function(el) {
+                el.style.display = 'none';
+            },
+
+            toggle: function(el) {
+                if (el.style.display == 'none') {
+                    el.style.display = '';
+                } else {
+                    el.style.display = 'none';
+                }
+            }
         }
     }
 });
