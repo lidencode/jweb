@@ -1,4 +1,14 @@
 jWeb.extend('dom', {
+    attr: {
+        get: function(el, key) {
+            return el.getAttribute(key);
+        },
+
+        set: function(el, key, value) {
+            return el.setAttribute(key, value);
+        }
+    },
+
     css: {
         display: {
             show: function(el) {
@@ -26,7 +36,7 @@ jWeb.extend('dom', {
     filters: {
         filter: function(query, filters, enableCallback, disableCallback) {
             jWeb.func.foreach(filters, function(key, value) {
-               
+
             });
         }
     },
