@@ -45,14 +45,6 @@ jWeb.extend('ajax', {
         return jWeb.ajax.call(url, {method: 'POST'}, params, callback);
     }
 });jWeb.extend('dom', {
-    each: function(query, callback) {
-        return document.querySelectorAll(query).forEach(callback);
-    },
-
-    find: function(query) {
-        return document.querySelectorAll(query);
-    },
-
     css: {
         display: {
             show: function(el) {
@@ -70,6 +62,29 @@ jWeb.extend('ajax', {
                     el.style.display = 'none';
                 }
             }
+        },
+    },
+
+    each: function(query, callback) {
+        return document.querySelectorAll(query).forEach(callback);
+    },
+
+    filters: {
+        filter: function(query, filters, enableCallback, disableCallback) {
+            jWeb.func.foreach(filters, function(key, value) {
+               console.log('key: '+key);
+                console.log('value: '+value);
+            });
+        }
+    },
+
+    find: function(query) {
+        return document.querySelectorAll(query);
+    }
+});jWeb.extend('func', {
+    foreach: function(items, callback) {
+        for (const [key, value] of Object.entries(items)) {
+            callback(key, value);
         }
     }
 });jWeb.extend('wpo', {

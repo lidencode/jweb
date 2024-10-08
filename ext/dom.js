@@ -1,12 +1,4 @@
 jWeb.extend('dom', {
-    each: function(query, callback) {
-        return document.querySelectorAll(query).forEach(callback);
-    },
-
-    find: function(query) {
-        return document.querySelectorAll(query);
-    },
-
     css: {
         display: {
             show: function(el) {
@@ -24,6 +16,22 @@ jWeb.extend('dom', {
                     el.style.display = 'none';
                 }
             }
+        },
+    },
+
+    each: function(query, callback) {
+        return document.querySelectorAll(query).forEach(callback);
+    },
+
+    filters: {
+        filter: function(query, filters, enableCallback, disableCallback) {
+            jWeb.func.foreach(filters, function(key, value) {
+               
+            });
         }
+    },
+
+    find: function(query) {
+        return document.querySelectorAll(query);
     }
 });
