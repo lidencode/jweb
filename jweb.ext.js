@@ -45,6 +45,30 @@ jWeb.extend('ajax', {
         return jWeb.ajax.call(url, {method: 'POST'}, params, callback);
     }
 });jWeb.extend('dom', {
+    attr: {
+        get: function(el, key) {
+            return el.getAttribute(key);
+        },
+
+        set: function(el, key, value) {
+            return el.setAttribute(key, value);
+        }
+    },
+
+    class: {
+        add: function(el, className) {
+            el.classList.add(className);
+        },
+
+        has: function(el, className) {
+            el.classList.contains(className);
+        },
+
+        remove: function(el, className) {
+            el.classList.remove(className);
+        }
+    },
+
     css: {
         display: {
             show: function(el) {
@@ -69,11 +93,20 @@ jWeb.extend('ajax', {
         return document.querySelectorAll(query).forEach(callback);
     },
 
+    html: function(el, html) {
+        if (typeof html == "undefined") {
+            /* return element outer html */
+            return el.outerHTML;
+        } else {
+            /* replace element outer html */
+            el.outerHTML = html;
+        }
+    },
+
     filters: {
-        filter: function(query, filters, enableCallback, disableCallback) {
+        check: function(query, filters, enableCallback, disableCallback) {
             jWeb.func.foreach(filters, function(key, value) {
-               console.log('key: '+key);
-                console.log('value: '+value);
+
             });
         }
     },
