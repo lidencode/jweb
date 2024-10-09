@@ -9,6 +9,20 @@ jWeb.extend('dom', {
         }
     },
 
+    class: {
+        add: function(el, className) {
+            el.classList.add(className);
+        },
+
+        has: function(el, className) {
+            el.classList.contains(className);
+        },
+
+        remove: function(el, className) {
+            el.classList.remove(className);
+        }
+    },
+
     css: {
         display: {
             show: function(el) {
@@ -34,7 +48,7 @@ jWeb.extend('dom', {
     },
 
     filters: {
-        filter: function(query, filters, enableCallback, disableCallback) {
+        check: function(query, filters, enableCallback, disableCallback) {
             jWeb.func.foreach(filters, function(key, value) {
 
             });
